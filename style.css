@@ -14,7 +14,7 @@ Author URI: dannyholmanmedia.com
 /* Initial state */
 .animate {
   opacity: 0;
-  transform: translateX(200px);
+  transform: translateX(0px);
   transition: 2s ease;
 }
 
@@ -90,9 +90,11 @@ Author URI: dannyholmanmedia.com
 }
 
 
+/* Basic Reset */
 body {
   overflow-x: hidden;
 }
+
 
 ul {
     list-style-type: none; /* Remove bullet points */
@@ -144,10 +146,6 @@ ul {
 
 a {
   font-family: "montserrat";
-}
-
-body {
-  margin: 0;
 }
 
 /*NAVIGATION------------------------------------
@@ -465,6 +463,13 @@ height: 60px;
 ------------------------------------------------------------------------------------------------------------
 --------------------------*/
 @media (max-width: 768px) {
+
+  .animate {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: 2s ease;
+    }
+
   .site-branding {
     flex-direction: column;
     align-items: flex-start;

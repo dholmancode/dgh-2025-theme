@@ -3,7 +3,7 @@
     background-position: center;
     background-repeat: no-repeat;
     height: fit-content;
-    min-height: 100vh;
+    min-height: 800px;
     color: white;
     position: relative;
     display: flex;
@@ -156,7 +156,7 @@
     color: #fff;
     overflow: hidden;
     width: 100vw; /* Full-width for the section */
-    height: 80vh; /* Optional: If you want the section to fill the entire viewport height */
+    height: 700px; /* Optional: If you want the section to fill the entire viewport height */
     flex-direction: row; /* Flex items laid out in a row */
     transition: background-image .5s ease-in-out; /* Smooth transition for background image */
 }
@@ -341,8 +341,7 @@
 
 @media (max-width: 768px) {
     .photography-collections {
-    flex-direction: column; /* Flex items laid out in a row */
-    height: 100vh;
+    display: none;
     }
     .active-info h2 {
         font-size: 1.9rem;
@@ -413,6 +412,7 @@ cursor: pointer;
 border: none;
 transition: .5s ease;
 color: white;
+margin-top: 20px;
 }
 
 .two-column button p {
@@ -478,9 +478,6 @@ font-size: 1.5rem;
 }
 /*MOBILE-------------------------------------------------------------------------------------------*/
 @media (max-width: 900px) {
-    .photography-collections {
-        display: none;
-    }
     .masthead {}
 
     .masthead .overlay {}
