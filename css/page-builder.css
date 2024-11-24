@@ -1,0 +1,589 @@
+.masthead {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: fit-content;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 80%);
+    z-index: 1;
+}
+
+.masthead h1 {
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    margin-top: 200px;
+    margin: 10px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.column a {
+    text-decoration: none !important;
+}
+
+.columns {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+
+}
+
+.hero-content .column {
+    flex: 1;
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 30px;
+    background-color: #00000054;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.616);
+    text-decoration: none;
+    transition: 1s ease;
+    height: fit-content;
+    min-height: 350px;
+
+}
+
+.hero-content .column:hover {
+    transform: scale(1.04);
+    background-color: rgba(0, 0, 0, 0.362);
+}
+
+.hero-content img {
+    width: 120px;
+    margin: 20px;
+}
+
+.hero-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;    
+    text-decoration: none !important;
+}
+
+.hero-content p {
+    margin-bottom: 15px;
+    text-decoration: none !important;
+    font-size: 1rem;
+}
+
+.columns .cta-button {
+    font-size: .8rem;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #00A4A2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background-color 0.3s ease;
+}
+
+.columns .cta-button:hover {
+    background-color: #1b5a6f;
+}
+
+
+.two-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.two-column-content a {
+    color: #00A4A2;
+    text-decoration: underline;
+    transition: .5s ease;
+}
+
+.two-column-content a:hover {
+    color: #E59C59;
+}
+
+.two-column-image img {
+    width: 400px;
+    height: 600px;
+    margin: 40px;
+    object-fit: cover;
+    border-radius: 40px;
+
+}
+
+.two-column-content {
+    margin: 40px;
+    max-width: 500px;
+    width: 100%;
+}
+
+
+.photography-collections {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    overflow: hidden;
+    width: 100vw; /* Full-width for the section */
+    height: 80vh; /* Optional: If you want the section to fill the entire viewport height */
+    flex-direction: row; /* Flex items laid out in a row */
+    transition: background-image .5s ease-in-out; /* Smooth transition for background image */
+}
+
+.active-info {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+}
+
+/* Optionally, you can add a hidden class for the fading effect */
+.hidden {
+    opacity: 0;
+}
+
+/* Smooth fade-out and fade-in classes */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Match with the JS timeout */
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.collection-card {
+    transition: transform 2.5s ease, opacity 0.5s ease;
+}
+
+/* Pseudo-element to manage the background image */
+.photography-collections::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Start with the background being invisible */
+    transition: opacity 1s ease; /* Apply a smooth opacity transition */
+    z-index: -1; /* Place the pseudo-element behind the content */
+}
+
+.photography-collections .cta-button {
+    background-color: #00A4A2;
+    padding: 10px 40px;
+    color: white;
+    border-radius: 4px; /* Add border-radius for better appearance */
+    text-decoration: none; /* Ensure the link style is removed */
+    transition: .5s ease;
+    text-wrap: no-wrap;
+    margin-top: 40px;
+}
+
+.cta-button:hover {
+    background-color: #E59C59;
+    color: black;
+}
+
+.collection-wrapper {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Ensure space around elements */
+    width: 90vw;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+
+}
+
+.photography-collections .active-collection {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30vw; /* Adjust this as needed */
+    z-index: 2; /* Ensure it appears over the background */
+    position: relative;
+    margin-left: 10vw;
+}
+
+.active-info h2 {
+    font-size: 3rem;
+
+}
+
+.active-info p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.photography-collections .collections-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 2rem;
+    align-items: center;
+    flex: 1;
+    z-index: 1;
+    gap: 0px;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+    margin: 0 auto;
+    padding-top: 20px;
+    margin-left: -400px;
+}
+
+.photography-collections .collection-card {
+    flex: 0 0 auto;
+    margin: 0; /* Remove any margin between the cards, gap will be handled by flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 300px; /* Initial card size */
+    height: 500px; /* Card height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: 1.5s ease; /* Smooth transition for position, opacity, and size */
+}
+
+.photography-collections .collections-list .collection-card:hover {
+
+}
+
+
+
+/* Ensure each card is centered */
+.photography-collections .collection-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 40px;
+    filter: brightness(.7);
+    transition: 1s ease;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.photography-collections .collection-card img:hover {
+    filter: brightness(.9);
+    transform: scale(1.05);
+}
+
+.collection-card img .collection-card h3:hover {
+    filter: brightness(.9);
+    transform: scale(1.05);
+}
+
+.photography-collections .collection-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 40px;
+    filter: brightness(0.7);
+    transition: filter 1s ease, transform 1s ease;
+}
+
+.photography-collections .collection-card.hover-h3 img {
+    filter: brightness(0.9);
+    transform: scale(1.05);
+}
+
+
+.photography-collections .collection-card h3 {
+    position: absolute;
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .photography-collections {
+    flex-direction: column; /* Flex items laid out in a row */
+    height: 100vh;
+    }
+    .active-info h2 {
+        font-size: 1.9rem;
+        margin: 20px;
+    }
+
+    .active-info p {
+        font-size: 1rem;
+        margin: 40px;
+    }
+
+    .cta-button {
+        background-color: #00A4A2;
+        padding: 5px 10px;
+        font-size: 1rem;
+        color: white;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: .5s ease;
+    }
+
+
+    .collection-wrapper {
+        flex-direction: column;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+        width: 100vw;
+        align-items: center;
+    }
+    .photography-collections .collections-list{
+        margin-left: -200px !important;
+        display: block;
+        margin-top: 100px;
+    }
+
+    .active-collection {
+        width: 100% !important;
+        display: block !important;
+        margin-left: 0px !important;
+
+    }
+    .active-info {
+        text-align: center;
+        justify-content: center;
+    }
+    .photography-collections .collection-card {
+        width: 250px;
+        height: 300px;
+        margin: 50px;
+}
+.cta-button {
+    text-wrap: nowrap;
+}
+}
+
+.two-column-image-2 img {
+    width: 400px;
+    height: 400px;
+    margin: 40px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.two-column button {
+background-color: #00A4A2;
+padding: 0px 10px;
+border-radius: 5px;
+cursor: pointer;
+border: none;
+transition: .5s ease;
+color: white;
+}
+
+.two-column button p {
+    margin: 0px;
+    padding: 10px 20px;
+    }
+
+.two-column button a {
+    color: white;
+    transition: .5s ease;
+
+}
+
+.two-column button:hover {
+background-color: #E59C59;
+}
+
+.two-column button:hover a {
+    color: black !important;
+    }
+
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 100% 0;
+    }
+    50% {
+        background-position: 0 100%;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.cta-banner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to left, #E59C59, #4B1521);
+    background-size: 200% 200%;
+    animation: gradientAnimation 20s ease infinite;
+}
+
+
+
+.cta-banner h2 {
+font-size: 1.5rem;
+}
+
+.cta-banner p {
+    font-size: 18px;
+}
+
+.cta-banner a {
+    padding: 20px;
+    background-color: #00A4A2;
+    color: #fff;
+    border-radius:15px ;
+}
+/*MOBILE-------------------------------------------------------------------------------------------*/
+@media (max-width: 900px) {
+    .masthead {}
+
+    .masthead .overlay {}
+    
+    .masthead h1 {
+        margin-top: 150px;
+        font-size: 1.7rem;
+
+    }
+    
+    .hero-content {}
+    
+    .column a {}
+    
+    .columns {
+        flex-direction: column-reverse;
+        margin-top: 0px;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .hero-content .column {
+        flex-direction: row;
+        margin: 5px;
+        padding: 0px;
+        width: 95vw;
+        height: fit-content;
+        background-color: #000000b8;
+        justify-content: flex-start;
+        min-height: 50px;
+
+    }
+    .hero-content .column > :nth-child(1) { order: 2; } /* Move element 1 to position 2 */
+.hero-content .column > :nth-child(2) { order: 1; } /* Move element 2 to position 1 */
+.hero-content .column > :nth-child(3) { order: 3; } /* Keep element 3 in position 3 */
+.hero-content .column > :nth-child(4) { order: 4; } /* Keep element 4 in position 4 */
+
+
+    .hero-content .column:hover {
+        background-color: #000000e8;
+        transform: scale(1.01);
+
+    }
+    
+    .hero-content img {
+        width: 50px;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-content p {
+        display: none;
+    }
+    
+    .columns .cta-button {
+        display: none;
+
+
+    }
+    
+    .columns .cta-button:hover {}
+
+
+
+.two-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+}
+
+.two-column-image img {
+    width: 60vw;
+    height: 300px;
+    margin: 0px;
+    object-fit: cover;
+    border-radius: 40px;
+
+}
+
+.two-column-content {
+    margin: 10px 20px;
+    font-size: 1rem;
+    width: 85%;
+}
+
+.two-column-content content{
+    margin: 10px 40px;
+}
+
+.two-column-content h2 {
+    text-align: center;
+
+}
+
+.two-column-image-2 img{
+margin: 0px;
+width: 70vw;
+height: 70vw;
+
+}
+
+
+}

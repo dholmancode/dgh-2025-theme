@@ -1,0 +1,629 @@
+/*
+Theme Name: DGH 2024
+Text Domain: dannyholmanmedia.com
+Version: 7.01.15
+Description: DGH Media Website Template
+Tags: New and Improved; Adventure; WooCommerce Enabled
+Author: Danny Holman
+Author URI: dannyholmanmedia.com
+*/
+/* Header Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* Initial state */
+.animate {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: 2s ease;
+}
+
+/* Visible state */
+.animate.visible {
+  opacity: 1 !important;
+  transform: translateX(0);
+}
+
+
+
+/*Loading Animation*/
+.loading-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-animation .logo-container {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.loading-animation .circle {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background-image: url('<?php the_field("circle_logo", "option"); ?>');
+  background-size: cover;
+  animation: rotate 2s linear infinite;
+}
+
+.loading-animation .icon {
+  width: 125px;
+  height: 109px;
+  overflow:visible;
+  background-image: url('<?php the_field("icon_logo", "option"); ?>');
+  background-size: cover;
+}
+
+.loading-animation .icon img{
+  padding: 30px;
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;           /* Remove default padding */
+    margin: 0;            /* Remove default margin */
+}
+
+ol {
+    list-style-type: none; /* Remove numbering */
+    padding: 0;           /* Remove default padding */
+    margin: 0; 
+    font-family: "montserrat";
+  color: white;
+  }
+
+h1 {
+  font-family: "montserrat";
+  font-weight: 700;
+  color: white;
+}
+
+h2 {
+  font-family: "montserrat";
+  color: white;
+}
+
+h3 {
+  font-family: "montserrat";
+  color: white;
+}
+
+h4 {
+  font-family: "montserrat";
+  font-size: 22px;
+  color: white;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+p {
+  font-family: "Quicksand";
+  color: white;
+}
+
+ul {
+  font-family: "montserrat";
+  font-weight: 100;
+}
+
+a {
+  font-family: "montserrat";
+}
+
+body {
+  margin: 0;
+}
+
+/*NAVIGATION------------------------------------
+------------------------------------------------
+------------------------------------------------*/
+
+/*HEADER--------------------------------------------------------------------*/
+.site-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: fixed;
+  width: 100vw;
+  transition: .5s ease;
+  background: #33333300;
+  height: 200px;
+  z-index: 999;
+}
+.site-logo img {
+  height: 120px;
+  width: auto;
+  margin: 10px;
+  transition: .5s ease; /* Transition for smooth logo resizing */
+}
+
+.header-container {
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Smaller Header when Scrolling */
+.sticky-header-small {
+  display: flex;
+  position: fixed;
+  background: #0c0c0c;
+  height: 70px;
+  transition: .5s ease;
+}
+
+.sticky-header-small .main-navigation ul {
+font-size: 17px;
+}
+
+header .sticky-header-small {
+  background: #333;
+  transition: .5s ease;
+}
+
+.sticky-header-small .site-logo img {
+height: 60px;
+}
+
+
+.site-branding {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.site-logo img {
+  max-height: 200px;
+  width: auto;
+}
+
+
+.main-navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  width: 100%;
+}
+
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+  font-weight: 100;
+  transition: 0.5s ease;
+}
+
+.main-navigation li {
+  margin-right: 50px;
+  font-family: "Quicksand";
+  position: relative; /* Enable positioning for pseudo-elements */
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #00A4A2 !important;
+}
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Position underline */
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #E59C59;
+  transition: width 0.3s ease-in-out;
+  transform: translateX(-50%);
+  border-radius: 200px;
+}
+
+.main-navigation a:hover::after {
+  width: 100%; /* Expand the underline */
+}
+
+.main-navigation .current-menu-item > a::after {
+  width: 100%; /* Keep underline for active page */
+}
+
+
+
+.menu-main-menu-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Initial hidden state for the sub-menu */
+.sub-menu {
+  opacity: 0;
+  transform: translateY(-10px); /* Move it slightly up */
+  visibility: hidden; /* Prevent it from being seen */
+  pointer-events: none; /* Prevent any interaction */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+    visibility 0s 0.3s; /* Delay visibility change */
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  text-wrap: none;
+}
+
+/* Show sub-menu when hovering over the parent menu item */
+.menu-item:hover .sub-menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+    visibility 0s 0s;
+}
+
+.sub-menu-toggle {
+  display: none;
+}
+
+.sub-menu li a {
+  font-size: 16px;
+}
+
+.sub-menu li a:hover {
+  color: #238196;
+  background-color: #333; /* Example background color on hover */
+}
+
+.menu-item-has-children {
+	position: relative;
+	padding-right: 20px; /* Add space for the arrow */
+  }
+
+  .menu-item-has-children::after {
+	content: '<'; /* You can replace this with a custom icon if needed */
+	position: absolute;
+	right: -10px;
+	color: white;
+	top: 16px;
+	transform: translateY(-50%) rotate(0deg); /* Initially pointing to the right */
+	transition: transform 0.3s ease; /* Smooth rotation */
+  }
+
+  /* Rotate the arrow 90 degrees (down) when the parent menu item is hovered */
+  .menu-item-has-children:hover::after {
+	transform: translateY(-50%) rotate(-90deg); /* Points down */
+  }
+
+  /* Show sub-menu when hovering over the parent menu item */
+  .menu-item-has-children:hover .sub-menu {
+	opacity: 1;
+	transform: translateY(0);
+	visibility: visible;
+	pointer-events: auto;
+  }
+
+/*HEADER MOBILE-----------------
+------------------------------------------------------------------------------------------------------------
+------HAMBURGER MENU IN THE MEDIA QUERY BELOW--------------------*/
+/* Hide original navigation at smaller screens */
+@media (min-width: 940px) {
+.sidebar-menu {
+  display: none;
+}
+}
+
+@media (max-width: 940px) {
+
+  .site-logo img {
+    height: 100px;
+    width: auto;
+    transition: .5s ease; /* Transition for smooth logo resizing */
+  }
+
+  .sticky-header-small {
+    height: 90px;
+    top: 0;
+  }
+
+
+  .main-navigation {
+      display: none;
+  }
+
+/* Hamburger menu icon styles */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1000;
+  margin-right: 30px;
+}
+
+.hamburger-menu span {
+  background: white;
+  border-radius: 22px;
+  display: block;
+  height: 4px;
+  margin: 6px 0; /* Adjust margin for even spacing */
+  width: 50px;
+  transition: 0.3s ease; /* Smooth transition for both transform and opacity */
+}
+
+/* Transformation styles for "X" effect */
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(-45deg) translateY(22.7px); /* Position and rotate the top bar */
+  width: 40px;
+
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0; /* Hide middle bar */
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(45deg) translateY(-22.7px); /* Position and rotate the bottom bar */
+  width: 40px;
+
+}
+
+
+
+  /* Style for the sidebar menu */
+  .sidebar-menu {
+      position: fixed;
+      top: 0;
+      left: -150vw; /* Hidden initially */
+      width: 90vw;
+      max-width: 350px;
+      height: 100vh;
+      background: linear-gradient(180deg, #003A3A, #00A4A2);
+      display: flex;
+  flex-direction: column;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 999; /* Above content */
+  }
+
+  .sidebar-menu ul {
+    margin-top: 100px;
+      list-style: none;
+      padding: 0;
+  }
+
+  .sidebar-menu li {
+      margin: 20px 0;
+  }
+
+  .sidebar-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 30px;
+      font-family: "Quicksand";
+  }
+
+  /* Show the sidebar when active */
+  .sidebar-menu.active {
+      left: 0;
+  }
+
+  /* Close button */
+  .sidebar-close {
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      margin-bottom: 20px;
+  }
+}
+
+
+/*MOBILE-----------------
+------------------------------------------------------------------------------------------------------------
+--------------------------*/
+@media (max-width: 768px) {
+  .site-branding {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-navigation {
+    margin-top: 15px;
+  }
+
+  .main-navigation ul {
+    flex-direction: column;
+  }
+
+  .main-navigation li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-navigation {
+  margin: 20px;
+  }
+
+  .footer-navigation {
+    margin: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center !important;
+    margin-top: 60px;
+
+    }
+    .social-links img {
+      margin-left: 0px !important;
+      margin-top: 0px !important;
+      margin: 20px !important;
+  }
+
+    .social-icons li {
+      margin-left: 0px;
+  }
+
+    .footer-menu li {
+      text-align: center;
+    }
+
+    .scroll-to-top a{
+      margin: 20px;
+    }
+    .scroll-top-link {
+      margin: 40px 10px !important;
+
+    }
+    .footer-logo {
+      margin: 20px;
+      margin-bottom: 60px;
+    }
+  
+}
+
+
+  /*FOOTER--------------------------------------------------------------------*/
+.social-icons ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.social-icons li {
+    margin-left: 10px;
+}
+
+.social-links {
+    text-align: center; /* Center the content */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.social-links a {
+    text-decoration: none; /* Remove underline */
+}
+
+.social-links img {
+    width: 40px; /* Set a specific width for the icon */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Smooth scaling effect */
+	margin-left: 10px;
+  margin-top:20px;
+}
+
+.social-links a:hover img {
+    transform: scale(1.1); /* Scale icon on hover */
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #003A3A; 
+  border-top: 10px solid #00A4A2;
+  color: white; 
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.footer-navigation {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+footer img {
+  width: 200px;
+  height: auto;
+}
+
+.scroll-to-top a{
+  padding: 10px 40px;
+  background-color: #4B1521;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.7s ease;
+}
+
+.scroll-to-top a:hover{
+  background-color: #E59C59;
+  color: black;
+
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.footer-menu li {
+  margin: 5px 0;
+}
+
+.footer-menu li a {
+  color: white;
+  text-decoration: none;
+  transition: .5s ease;
+
+}
+
+.footer-menu li a:hover {
+  color: #E59C59 !important;
+}

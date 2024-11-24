@@ -1,0 +1,500 @@
+.animate-2 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s, transform 2s;
+}
+.animate-2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Other existing styles */
+html {
+    scroll-behavior: smooth;
+}
+
+.portfolio-masthead {
+    display: flex;
+    padding-top: 200px;
+    justify-content: center;  /* Keeps content spaced between left and right */
+    background-color: #161616;
+    align-items: center;
+    width: 100%;
+}
+
+.masthead-left {
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.headshot img.circle-headshot {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+
+.intro-text {
+    margin-top: 15px;
+}
+
+.intro h3 {
+    font-size: 30px;
+    margin: 5px;
+}
+
+.masthead-right {
+    display: flex;
+    flex-direction: row;
+    max-width: 700px;
+    background: linear-gradient(-90deg, #FF9E0E,  #ff9f0e74,  #ff9f0e00, #ff9f0e00);
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 40px 0px 0px 40px;
+}
+
+.masthead-center {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+flex-direction: column;
+}
+
+.masthead-center a {
+    background-color: #7B2C2D;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 300px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+#view-projects-button {
+    background: linear-gradient(to left, #ff7518, #b33771);
+    background-position: 100% 0%;
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 80px;
+    animation: gradientAnimation 5s ease-in-out infinite alternate; /* Smooth and continuous animation */
+    position: relative;
+    transition: 0.3s ease; /* Smooth transition for font size and position */
+}
+
+#view-projects-button:hover {
+    transform: scale(1.05);
+    background-position: 0% 50%; /* Smooth gradient shift */
+    animation-play-state: paused; /* Pause the gradient animation on hover */
+}
+
+#view-projects-button::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%; /* Position it to start from the center */
+    width: 0;
+    height: 5px;
+    background: linear-gradient(to right, #ff7518, #b33771);
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%); /* Center the underline */
+    border-radius: 200px;
+}
+
+#view-projects-button:hover::after {
+    width: 100%;
+}
+
+#view-projects-button:hover::after {
+    transform: scale(1.05) translateX(-50%);
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 100%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Add the arrow */
+.masthead-center a::after {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow on hover */
+.masthead-center a:hover::after {
+}
+
+
+.certifications {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+.certification {
+    justify-content:center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    transition: .5s ease;
+}
+
+.certifications h2 {
+    text-align: center;
+    font-weight: 200;
+    margin: 0px;
+}
+
+.certifications a {
+    background: linear-gradient(to right, #ff7518, #b33771);
+    background-position: 50% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .5s ease;
+}
+.certifications p {
+    margin: 0px;
+    text-align: center;
+
+}
+
+.certification:hover {
+    transform: scale(1.03);
+}
+
+
+.project-image {
+    flex: 0 0 auto; /* Prevent flex-grow */
+}
+
+.project-image img {
+    width: 100%; /* Make image responsive */
+    max-width: 250px; /* Set a max width for the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.learn-more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    width: fit-content;
+    background-color: #238196;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Project Feed -----------------------------------------------------------------------------*/
+.main-project-feed {
+    padding: 40px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.project-item {
+    display: flex;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+}
+
+.project-item h3 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.project-image img {
+    width: 500px;
+    height: auto;
+    max-width: 50vw;
+    border-radius: 40px;
+}
+
+.tools-used {
+    color: #E59C59;
+    font-weight: bold;
+    font-family: 'Montserrat';
+}
+
+.project-content {
+    padding: 20px;
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+/* Tabbed Details */
+.project-details-tabs {
+    margin-top: 20px;
+}
+
+.tab-titles {
+    display: flex;
+    position: relative;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    margin-right: 200px;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 25px 10px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.tab:hover {
+color: #238196;
+}
+
+
+.tab.active {
+    color: #00A4A2;
+}
+
+.tab-underline {
+    position: absolute;
+    bottom: -2px;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #00A4A2;
+    transition: transform 0.3s ease, width 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.tab-content {
+    opacity: 0;
+    height: 300px;
+    overflow-y: scroll;
+    width: 100%;
+    max-width: 500px;
+    background-color: #454545;
+    padding: 15px !important;
+    border-radius: 10px;
+    margin: 20px 20px 20px 0px;
+    transition: opacity 0.5s ease, visibility 0s 0.5s; /* Delay visibility toggle to match fade-out */
+    visibility: hidden;
+    position: absolute; /* Ensures smooth fade-out without layout shift */
+}
+
+.tab-content.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0s 0s; /* Immediate visibility toggle for fade-in */
+    position: relative;
+}
+
+
+.tab-content p {
+    margin: 0px !important
+}
+
+.tab-content ul {
+    color: white;
+    list-style-type: disc; /* Bullet style */
+    padding-left: 20px; /* Indent list from the left */
+    margin: 10px 0; /* Spacing around the list */
+}
+
+.tab-content ul li {
+    margin-bottom: 8px; /* Space between list items */
+}
+
+.tab-content a {
+    color:#00A4A2 !important;
+    transition: .5s ease;
+    text-decoration: underline !important;
+}
+
+.tab-content a:hover {
+    color:#E59C59 !important;
+
+}
+
+/* Optional: Customize bullet point */
+.tab-content ul li::marker {
+    color: #00A4A2; /* Custom bullet color */
+}
+
+/* Custom scrollbar styles for WebKit browsers */
+.tab-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+    background: #f1f1f100; /* Light gray background for scrollbar track */
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background-color: #238196; /* Darker gray for scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for thumb */
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color when hovering */
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    padding: 20px 0;
+}
+
+/* Buttons */
+.project-buttons a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.view-project-button {
+    background-color: #00A4A2;
+    color: black;
+    border-radius: 15px;
+    transition: .5s ease;
+}
+
+.github-button {
+    background-color: #7B2C2D;
+    Color: black;
+    border-radius: 15px;
+    transition: .5s ease;
+}
+
+.view-project-button:hover {
+background-color: #E59C59;
+color: black;
+}
+
+.github-button:hover {
+    background-color: #E59C59;
+    color: black;
+    }
+
+/* Responsive Styles */
+@media (max-width: 1120px) {
+    .project-item {
+        flex-direction: column;
+        width: 100vw;
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 675px) {
+.project-content{
+    width: 90vw;
+    max-width: 650px;
+    padding: 0px;
+    margin-top: 50px;
+}
+
+.tab-titles {
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 20px;
+    border: 1px solid white;
+}
+
+.project-item img {
+    width: 90vw;
+    max-width: 90vw;
+}
+
+.tab-content {
+    max-width: 100%;
+    width: fit-content;
+    max-width: 100%;
+    margin-right: 0px;
+}
+}
+
+
+@media (max-width: 768px) {
+
+    .tab-underline {
+        display: none;
+    }
+    .certifications h2{
+        text-align: center;
+    }
+
+    .certification {
+        justify-content: center;
+    }
+    .portfolio-masthead {
+        flex-direction: column;
+        align-items: center;
+    }
+    #view-projects-button {
+
+    }
+    
+    .masthead-left, .masthead-right {
+        max-width: 100%;
+        text-align: center;
+    }
+    .featured-project {
+        margin-top: 40px;
+    }
+    
+    .learn-more-button, .project-buttons a {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .featured-details {
+        align-items: center;
+    }
+    
+    .project-item {
+        flex-direction: column; /* Stack the project image above the content */
+    }
+    
+    .project-image img {
+        width: 100%; /* Ensure images are responsive */
+    }
+}
