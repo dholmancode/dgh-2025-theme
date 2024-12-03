@@ -76,7 +76,7 @@
                             <?php echo WC()->cart->get_cart_contents_count(); ?>
                         </span>
                         <div class="logo-wrapper">
-                            <img src="/wp-content/uploads/2024/10/cart_icon.png" alt="Logo" class="cart-logo">
+                            <img src="https://dannyholmanmedia.com/wp-content/uploads/2024/12/cart_icon.png" alt="Logo" class="cart-logo">
                         </div>
                         <span class="cart-icon"></span>
                     </a>
