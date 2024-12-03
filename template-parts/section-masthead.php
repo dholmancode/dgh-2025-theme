@@ -5,10 +5,10 @@ $image = get_field('masthead_image');
 <section class="masthead" style="background-image: url('<?php echo esc_url($image['url']); ?>');">
     <!-- Overlay div -->
     <div class="overlay"></div>
-    <div class="hero-content">
     <?php if ($title) : ?>
             <h1><?php echo esc_html($title); ?></h1>
         <?php endif; ?>
+    <div class="hero-content">
         <div class="columns">
             <?php
             // Query for Hero Content posts
@@ -29,21 +29,18 @@ $image = get_field('masthead_image');
                     $hero_link = get_field('hero_link'); // New ACF field for whole column link
             ?>
                     <a href="<?php echo esc_url($hero_link['url']); ?>" class="column" <?php if ($hero_link['target']) echo 'target="_blank"'; ?>>
-                        <?php if ($hero_title) : ?>
-                            <h2><?php echo esc_html($hero_title); ?></h2>
-                        <?php endif; ?>
-                        
-                        <?php if ($hero_icon) : ?>
+                    <?php if ($hero_icon) : ?>
                             <img src="<?php echo esc_url($hero_icon['url']); ?>" alt="<?php echo esc_attr($hero_icon['alt']); ?>">
-                        <?php endif; ?>
-
-                        <?php if ($hero_description) : ?>
-                            <p><?php echo esc_html($hero_description); ?></p>
+                        <?php endif; ?>   
+                    <div class="hero-info">
+                    <?php if ($hero_title) : ?>
+                            <h2><?php echo esc_html($hero_title); ?></h2>
                         <?php endif; ?>
 
                         <?php if ($hero_cta) : ?>
                             <span class="cta-button"><?php echo esc_html($hero_cta['title']); ?></span>
                         <?php endif; ?>
+                    </div>
                     </a>
             <?php
                 endwhile;
@@ -53,5 +50,8 @@ $image = get_field('masthead_image');
             endif;
             ?>
         </div>
+        <a class="about" href="#about">
+            <h3>About <span>&#10549</span></h3>
+        </a>
     </div>
 </section>
