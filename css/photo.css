@@ -3,10 +3,11 @@
 }
 
 .photo-container h1{
-    margin: 50px !important;
+    margin: 50px 50px 100px 50px !important;
     justify-content: center;
     justify-self: center;
     text-align: center;
+    font-size: 70px;
 }
 
 .gallery-container {
@@ -36,15 +37,17 @@
 }
 
 .photo-filter-tabs li a:hover {
-    color: #238196 !important;;
+    color: #238196 !important;
+    font-weight: 400;
+
 }
 
 .photo-filter-tabs li a {
-    color: tan;
+    color: #E59C59;
     text-decoration: none;
     padding: 10px;
     font-size: 20px;
-    transition: color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .photo-filter-tabs li.active a {
@@ -59,6 +62,10 @@
 }
 
 @media (max-width: 1040px) {
+
+    .photo-container h1{
+    font-size: 2rem;
+    }
     .photo-filter-tabs {
         display: flex;
         position: relative;
@@ -105,7 +112,7 @@
     bottom: 0;
     height: 3px;
     background-color: #238196;
-    top: 30px;
+    top: 25px;
     transition: width 0.4s, left 0.4s; /* Animate underline position and width */
     z-index: 1;
     left: 0;

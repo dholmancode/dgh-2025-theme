@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
     const $underline = $('.underline');
 
     function updateUnderline(tab) {
-        const tabOffset = $(tab).position().left + 20; // 20px offset for the underline
+        const tabOffset = $(tab).position().left + 19.5;
         const tabWidth = $(tab).outerWidth();
         $underline.css({ left: tabOffset, width: tabWidth });
     }

@@ -92,7 +92,7 @@ endif;
 ?>
 </div>
 
-<div id="project-feed" class="main-project-feed">
+<div id="project-feed" class="main-project-feed" style="overflow-x: none;">
     <?php
     // Custom Query for All Projects
     $args = array(

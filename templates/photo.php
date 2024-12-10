@@ -30,6 +30,9 @@ $icon_logo = get_field('icon_logo', $loading_animation_page->ID);     // Icon lo
     <li class="filter-tab active" data-filter="featured"><a href="#" data-collection="featured">Featured</a></li>
     <li class="filter-tab" data-filter="utah"><a href="#" data-collection="utah">Utah</a></li>
     <li class="filter-tab" data-filter="ireland"><a href="#" data-collection="ireland">Ireland</a></li>
+    <li class="filter-tab" data-filter="iceland"><a href="#" data-collection="iceland">Iceland</a></li>
+    <li class="filter-tab" data-filter="japan"><a href="#" data-collection="japan">Japan</a></li>
+    <li class="filter-tab" data-filter="switzerland"><a href="#" data-collection="switzerland">Switzerland</a></li>
     <span class="underline"></span> <!-- This should be inside the `ul` -->
 </ul>
 <div class="gallery-container">
