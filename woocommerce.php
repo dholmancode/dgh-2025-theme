@@ -28,15 +28,6 @@ get_header();
       <!-- Search Bar -->
       <input type="search" name="s" placeholder="Search products..." class="woocommerce-search" />
 
-      <!-- Filter Dropdown (e.g., by Category) -->
-      <?php
-      wp_dropdown_categories(array(
-        'show_option_all' => 'All Categories',
-        'taxonomy' => 'product_cat',
-        'name' => 'product_cat',
-        'class' => 'woocommerce-filter'
-      ));
-      ?>
 
       <!-- Sort By -->
       <select name="orderby" class="woocommerce-sort">
@@ -46,7 +37,7 @@ get_header();
         <option value="price-desc">Sort by Price: High to Low</option>
       </select>
 
-      <button type="submit" class="woocommerce-submit">Apply</button>
+      <button style="color: black; background-color: #E59C59;"type="submit" class="woocommerce-submit">Apply</button>
     </form>
   </div>
 

@@ -240,6 +240,7 @@ flex-direction: column;
 .project-item h3 {
     font-size: 30px;
     margin: 0;
+    font-weight: 300;
 }
 
 .project-image img {

@@ -285,6 +285,8 @@ add_action('after_setup_theme', 'theme_setup');
 /* WooCommerce Customizations                                           */
 /* -------------------------------------------------------------------- */
 
+
+
 // Add WooCommerce support
 function dannyholmanmedia_add_woocommerce_support() {
     add_theme_support('woocommerce');
