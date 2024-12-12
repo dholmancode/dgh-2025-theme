@@ -166,7 +166,8 @@ body.woocommerce,
   background-color: #E59C59 !important;
   color: black;
 }
-a:-webkit-any-link {
+
+.woocommerce a:-webkit-any-link {
   color: #fff !important;
 }
 

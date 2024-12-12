@@ -341,7 +341,7 @@ color: #238196;
 }
 
 .tab-content a {
-    color:#00A4A2 !important;
+    color:#00A4A2 !important ;
     transition: .5s ease;
     text-decoration: underline !important;
 }

@@ -43,7 +43,7 @@
 }
 
 .photo-filter-tabs li a {
-    color: #E59C59;
+    color: #E59C59 !important;
     text-decoration: none;
     padding: 10px;
     font-size: 20px;
