@@ -157,6 +157,29 @@ body.woocommerce,
   
 
 /* Cart and Checkout Pages */
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt {
+  background-color: #7b2c2d !important;
+  transition: .5s ease;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt:hover {
+  background-color: #E59C59 !important;
+  color: black;
+}
+a:-webkit-any-link {
+  color: #fff !important;
+}
+
+.woocommerce input {
+  border-radius: 20px;
+  border: none;
+  font-family: "Quicksand";
+}
+
+.select2-results__options li {
+  color: black;
+}
+
 .woocommerce-cart .product-name,
 .woocommerce-checkout .product-name {
   font-weight: 600;
@@ -296,10 +319,6 @@ display: none;
 .woocommerce div.product .product_title {
   font-size: 30px !important;
 }
-
- .quantity{
-
- }
 
  .woocommerce .quantity .qty {
   text-align: center;

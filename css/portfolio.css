@@ -148,8 +148,6 @@ flex-direction: column;
 }
 
 /* Rotate the arrow on hover */
-.masthead-center a:hover::after {
-}
 
 
 .certifications {
