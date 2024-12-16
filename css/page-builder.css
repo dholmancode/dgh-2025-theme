@@ -86,16 +86,31 @@ border-radius: 200px;
     transform: translateX(-50%);
     width: 0%; /* Initial state */
     height: 7px;
-    background: #E59C59;
+    background: linear-gradient(90deg, #003A3A, #E59C59, #4B1521, #E59C59, #003A3A);
+    background-size: 300% 100%; /* Ensure the gradient can scroll through */
     border-radius: 200px;
-    animation: expandWidth 0.9s ease-in-out 2.3s forwards; /* 4s delay and animation */
+    animation: expandWidth 1.3s ease-in-out 2.3s forwards, 
+               animateGradient 13s ease-in-out infinite; /* Gradient animation */
 }
 
 @keyframes expandWidth {
     to {
-        width: 100%; /* Final state */
+        width: 100%;
     }
 }
+
+@keyframes animateGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 
 
