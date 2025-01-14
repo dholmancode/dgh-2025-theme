@@ -102,36 +102,6 @@ function enqueue_page_builder_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_page_builder_styles');
 
-// Register Custom Post Type: Home Collections
-function register_home_collections_cpt() {
-    $labels = array(
-        'name'                  => _x('Home Collections', 'Post Type General Name', 'textdomain'),
-        'singular_name'         => _x('Home Collection', 'Post Type Singular Name', 'textdomain'),
-        'menu_name'             => __('Home Collections', 'textdomain'),
-        'name_admin_bar'        => __('Home Collection', 'textdomain'),
-        'add_new_item'          => __('Add New Collection', 'textdomain'),
-        'new_item'              => __('New Collection', 'textdomain'),
-        'edit_item'             => __('Edit Collection', 'textdomain'),
-        'view_item'             => __('View Collection', 'textdomain'),
-        'all_items'             => __('All Collections', 'textdomain'),
-    );
-
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'has_archive'        => true,
-        'menu_icon'          => 'dashicons-images-alt2',
-        'supports'           => array('title', 'editor', 'thumbnail'),
-        'rewrite'            => array('slug' => 'photos'),
-        'show_in_rest'       => true, // Ensures compatibility with Gutenberg
-    );
-
-    register_post_type('home_collections', $args); // Ensure this matches the query in your page-builder.php file
-}
-add_action('init', 'register_home_collections_cpt');
-
-
-
 /* -------------------------------------------------------------------- */
 /* Portfolio Customizations                                            */
 /* -------------------------------------------------------------------- */
