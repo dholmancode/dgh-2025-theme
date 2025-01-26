@@ -86,7 +86,7 @@ border-radius: 200px;
     transform: translateX(-50%);
     width: 0%; /* Initial state */
     height: 7px;
-    background: linear-gradient(90deg, #003A3A, #E59C59, #4B1521, #E59C59, #003A3A);
+    background: linear-gradient(90deg, #E59C59, #4B1521, #E59C59);
     background-size: 300% 100%; /* Ensure the gradient can scroll through */
     border-radius: 200px;
     animation: expandWidth 1.3s ease-in-out 2.3s forwards, 
