@@ -48,6 +48,11 @@ $icon_logo = get_field('icon_logo', $loading_animation_page->ID);     // Icon lo
                         <?php the_field('certification_2'); ?>
                     </div>
                 <?php endif; ?>
+                <?php if (get_field('certification_3')): ?>
+                    <div class="certification">
+                        <?php the_field('certification_3'); ?>
+                    </div>
+                <?php endif; ?>
             </div>
     </div>
 
