@@ -110,7 +110,7 @@ flex-direction: column;
     content: "";
     position: absolute;
     bottom: -5px;
-    left: 50%; /* Position it to start from the center */
+    left: 54%; /* Position it to start from the center */
     width: 0;
     height: 5px;
     background: linear-gradient(to right, #ff7518, #b33771);
@@ -120,7 +120,7 @@ flex-direction: column;
 }
 
 #view-projects-button:hover::after {
-    width: 100%;
+    width: 90%;
 }
 
 #view-projects-button:hover::after {
