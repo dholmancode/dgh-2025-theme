@@ -617,13 +617,13 @@ font-size: 1.5rem;
     }
     
     .hero-content .column {
-        flex-direction: row;
+        flex-direction: row-reverse;
         margin: 5px;
         padding: 0px;
-        width: 95vw;
+        width: 90vw;
         height: fit-content;
         background-color: #000000b8;
-        justify-content: flex-start;
+        justify-content: flex-end;
         min-height: 50px;
 
     }

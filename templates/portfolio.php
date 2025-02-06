@@ -55,46 +55,6 @@ $icon_logo = get_field('icon_logo', $loading_animation_page->ID);     // Icon lo
                 <?php endif; ?>
             </div>
     </div>
-
-
-    <!-- Featured Projects ---------------------------------------------------------------------->
-  
-    <?php
-/*
-<div class="masthead-right">
-
-$featured_args = array(
-    'post_type' => 'projects',
-    'posts_per_page' => 3, // Adjust as needed
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'featured',
-            'field'    => 'slug',
-            'terms'    => 'featured',
-        ),
-    ),
-);
-$featured_query = new WP_Query($featured_args);
-
-if ($featured_query->have_posts()) :
-    while ($featured_query->have_posts()) : $featured_query->the_post(); ?>
-        <div class="featured-project">
-            <?php if (has_post_thumbnail()) : ?>
-                <img src="<?php the_post_thumbnail_url('portfolio-thumbnail'); ?>" alt="<?php the_title(); ?>">
-            <?php endif; ?>
-            <div class="featured-details">
-                <h2><?php the_title(); ?></h2>
-                <p><?php the_excerpt(); ?></p>
-                <a href="#<?php echo sanitize_title(get_the_title()); ?>" class="learn-more-button">Learn More</a>
-            </div>
-        </div>
-    <?php endwhile;
-    wp_reset_postdata();
-else :
-    echo '<p>No featured projects found.</p>';
-endif;
-*/
-?>
 </div>
 
 <div id="project-feed" class="main-project-feed" style="overflow-x: none;">

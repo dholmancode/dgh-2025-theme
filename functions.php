@@ -296,10 +296,12 @@ add_action('wp_ajax_nopriv_update_cart_count', 'update_cart_count');
 /* Photo Rendering Customizations                                       */
 /* -------------------------------------------------------------------- */
 
-// Enqueue Custom Scripts for Photo Filtering
+// Enqueue Custom Scripts for Photo Filtering (Photography Page Only)
 function enqueue_custom_scripts() {
-    wp_enqueue_script('custom-photo-filter', get_template_directory_uri() . '/js/photo-filter.js', array('jquery'), null, true);
-    wp_localize_script('custom-photo-filter', 'ajaxurl', admin_url('admin-ajax.php'));
+    if (is_page('photography')) { // Replace 'photography' with the correct page slug
+        wp_enqueue_script('custom-photo-filter', get_template_directory_uri() . '/js/photo-filter.js', array('jquery'), null, true);
+        wp_localize_script('custom-photo-filter', 'ajaxurl', admin_url('admin-ajax.php'));
+    }
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
@@ -310,19 +312,19 @@ add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
 // Handle the Photo Filtering functionality
 function filter_photos() {
     // Capture the selected collection from the AJAX request
-    $collection_filter = isset($_POST['collection']) ? strtolower($_POST['collection']) : '';
+    $collection_filter = isset($_POST['collection']) ? sanitize_text_field($_POST['collection']) : '';
 
     $args = array(
-        'post_type' => 'photos',
+        'post_type'      => 'photos',
         'posts_per_page' => -1,
     );
 
     // Add collection filter if necessary
-    if ($collection_filter && $collection_filter != 'all') {
+    if (!empty($collection_filter) && strtolower($collection_filter) !== 'all') {
         $args['meta_query'] = array(
             array(
-                'key' => 'collection',
-                'value' => '"' . $collection_filter . '"',
+                'key'     => 'collection',
+                'value'   => '"' . esc_sql($collection_filter) . '"',
                 'compare' => 'LIKE'
             )
         );
@@ -333,8 +335,8 @@ function filter_photos() {
     if ($photos->have_posts()) :
         while ($photos->have_posts()) : $photos->the_post();
             $photo_title = get_field('photo_title');
-            $location = get_field('location');
-            $photo_url = get_the_post_thumbnail_url();
+            $location    = get_field('location');
+            $photo_url   = get_the_post_thumbnail_url();
             ?>
             <div class="photo-item">
                 <img src="<?php echo esc_url($photo_url); ?>" alt="<?php echo esc_attr($photo_title); ?>">
@@ -357,11 +359,14 @@ function filter_photos() {
 /* Lightbox Customizations                                              */
 /* -------------------------------------------------------------------- */
 
-// Enqueue custom Lightbox scripts
+// Enqueue custom Lightbox scripts (Photography Page Only)
 function enqueue_custom_lightbox_scripts() {
-    wp_enqueue_script('lightbox-js', get_template_directory_uri() . '/js/lightbox.js', array(), null, true);
+    if (is_page('photography')) { // Replace 'photography' with the correct page slug
+        wp_enqueue_script('lightbox-js', get_template_directory_uri() . '/js/lightbox.js', array(), null, true);
+    }
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_lightbox_scripts');
+
 
 /* -------------------------------------------------------------------- */
 /* Register Custom Post Type for Photos                                  */

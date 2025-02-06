@@ -198,6 +198,11 @@
     .photo-gallery {
         column-count: 1; /* One column for smaller screens */
     }
+
+
+.prev, .next {
+    top: 70% !important;
+}
 }
 
 /* Lightbox Styles remain the same */
